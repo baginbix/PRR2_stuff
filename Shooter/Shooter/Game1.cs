@@ -16,6 +16,7 @@ namespace Shooter
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
         }
 
         /// <summary>
@@ -29,6 +30,8 @@ namespace Shooter
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            ObjectManager.AddObject(new Player());
+
         }
 
         /// <summary>
@@ -39,6 +42,8 @@ namespace Shooter
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Assets.LoadContent(Content);
+            Assets.CreateStandartTexture(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -61,7 +66,7 @@ namespace Shooter
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            ObjectManager.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -74,7 +79,9 @@ namespace Shooter
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
+            ObjectManager.Draw(spriteBatch);
+            spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

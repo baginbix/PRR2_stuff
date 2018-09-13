@@ -41,7 +41,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
+    <Compile Include="BaseBullet.cs" />
+    <Compile Include="BaseObject.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="ObjectManager.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
