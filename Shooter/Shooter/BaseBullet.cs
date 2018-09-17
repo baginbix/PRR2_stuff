@@ -22,6 +22,8 @@ namespace Shooter
         public override void Update()
         {
             position += direction * speed;
+            if (position.X > 900 || position.X < -100 || position.Y < -100 | position.Y > 500)
+                Remove = true;
         }
 
         public override void OnCollision(BaseObject col)

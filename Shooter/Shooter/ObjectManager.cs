@@ -55,9 +55,11 @@ namespace Shooter
             for (int i = 0; i < objects.Count; i++)
             {
                 BaseObject target = objects[i];
+                
                 for (int j = i+1; j < objects.Count; j++)
                 {
                     BaseObject target2 = objects[j];
+                    if (target2.Remove) continue;
                     if (target.CollisionBox.Intersects(target2.CollisionBox))
                     {
                         target.OnCollision(target2);

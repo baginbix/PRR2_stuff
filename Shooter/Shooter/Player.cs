@@ -14,6 +14,9 @@ namespace Shooter
         float speed = 5f;
         Vector2 velocity = Vector2.Zero;
         KeyboardState keybord;
+        float shootTime = 60;
+        float timer = 60;
+
         public Player()
         {
             position = new Vector2(100,200);
@@ -25,10 +28,12 @@ namespace Shooter
             keybord = Keyboard.GetState();
             velocity = Vector2.Zero;
             Movement();
-            if(Mouse.GetState().LeftButton == ButtonState.Pressed)
+            if(Mouse.GetState().LeftButton == ButtonState.Pressed && timer >=shootTime)
             {
                 Shoot();
+                timer = 0;
             }
+            timer++;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
