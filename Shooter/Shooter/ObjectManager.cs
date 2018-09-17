@@ -24,6 +24,8 @@ namespace Shooter
             {
                 objects.Add(item);
             }
+            Collision();
+            RemoveObjects();
             objectsToBeAdded.Clear();
         }
 
@@ -41,6 +43,39 @@ namespace Shooter
                 objects.Add(obj);
             else
                 objectsToBeAdded.Add(obj);
+        }
+
+        public static T FindObject<T>() where T: BaseObject
+        {
+
+            return objects.First(x => x is T) as T;
+        }
+        private static void Collision()
+        {
+            for (int i = 0; i < objects.Count; i++)
+            {
+                BaseObject target = objects[i];
+                for (int j = i+1; j < objects.Count; j++)
+                {
+                    BaseObject target2 = objects[j];
+                    if (target.CollisionBox.Intersects(target2.CollisionBox))
+                    {
+                        target.OnCollision(target2);
+                        target2.OnCollision(target);
+                    }
+                }
+            }
+        }
+
+        private static void RemoveObjects()
+        {
+            var temp = new List<BaseObject>();
+            foreach (var item in objects)
+            {
+                if (!item.Remove)
+                    temp.Add(item);
+            }
+            objects = temp;
         }
     }
 }

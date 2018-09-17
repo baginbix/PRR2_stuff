@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace Shooter
 {
-    class BaseBullet:BaseObject
+    class EnemyFollowPlayer:BaseEnemy
     {
-        protected float speed =10;
-        protected Vector2 direction;
-
-        public BaseBullet(Vector2 pos, Vector2 dir)
+        Player target;
+        public EnemyFollowPlayer(Vector2 pos, Player player):base(pos)
         {
-            position = pos;
-            direction = dir;
-            texture = Assets.StandardTexture;
-            color = Color.Black;
+            target = player;
+            speed = 5;
+            color = Color.Red;
         }
+
         public override void Update()
         {
+            Vector2 direction = target.Position - position;
+            direction.Normalize();
             position += direction * speed;
         }
 
         public override void OnCollision(BaseObject col)
         {
-            if(col is BaseEnemy)
+            if(col is BaseBullet)
             {
                 Remove = true;
             }

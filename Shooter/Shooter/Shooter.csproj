@@ -43,7 +43,10 @@
   <ItemGroup>
     <Compile Include="Assets.cs" />
     <Compile Include="BaseBullet.cs" />
+    <Compile Include="BaseEnemy.cs" />
     <Compile Include="BaseObject.cs" />
+    <Compile Include="EnemyFollowPlayer.cs" />
+    <Compile Include="EnemySpawner.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ObjectManager.cs" />
     <Compile Include="Player.cs" />

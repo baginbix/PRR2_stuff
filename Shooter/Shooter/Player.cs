@@ -11,7 +11,7 @@ namespace Shooter
 {
     class Player: BaseObject
     {
-        float speed = 10f;
+        float speed = 5f;
         Vector2 velocity = Vector2.Zero;
         KeyboardState keybord;
         public Player()
