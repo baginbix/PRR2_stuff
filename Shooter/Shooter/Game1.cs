@@ -33,7 +33,6 @@ namespace Shooter
 
             base.Initialize();
             ObjectManager.AddObject(new Player());
-
         }
 
         /// <summary>

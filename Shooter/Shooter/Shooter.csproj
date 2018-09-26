@@ -48,6 +48,7 @@
     <Compile Include="EnemyFollowPlayer.cs" />
     <Compile Include="EnemySpawner.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="ICollision.cs" />
     <Compile Include="ObjectManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

@@ -14,6 +14,7 @@ namespace Shooter
         public BaseEnemy(Vector2 pos)
         {
             position = pos;
+            
         }
 
     }

@@ -9,13 +9,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shooter
 {
-    class Player: BaseObject
+    class Player: BaseObject, ICollision
     {
         float speed = 5f;
         Vector2 velocity = Vector2.Zero;
         KeyboardState keybord;
         float shootTime = 60;
         float timer = 60;
+
+        public Rectangle CollisionBox { get; set; }
 
         public Player()
         {
@@ -62,6 +64,7 @@ namespace Shooter
             if(velocity != Vector2.Zero)
                 velocity.Normalize();
             position += velocity *speed;
+            CollisionBox = new Rectangle(position.ToPoint(), new Point(10, 10));
         }
 
         private void Shoot()
@@ -69,6 +72,11 @@ namespace Shooter
             Vector2 direction = Mouse.GetState().Position.ToVector2() - position;
             direction.Normalize();
             ObjectManager.AddObject(new BaseBullet(position, direction));
+        }
+
+        public void Collision(BaseObject col)
+        {
+
         }
 
     }
