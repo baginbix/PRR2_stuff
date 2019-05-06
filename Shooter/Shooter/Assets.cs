@@ -13,10 +13,11 @@ namespace Shooter
     {
         public static Texture2D StandardTexture;
         public static Texture2D Player;
+        public static SpriteFont UIFont;
 
         public static void LoadContent(ContentManager content)
         {
-
+            UIFont = content.Load<SpriteFont>("UIFont");
         }
 
         public static void CreateStandartTexture(GraphicsDevice device)

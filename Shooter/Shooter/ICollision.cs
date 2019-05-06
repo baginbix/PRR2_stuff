@@ -14,6 +14,7 @@ namespace Shooter
             get;
             set;
         }
+        bool Remove { get; set; }
         void Collision(BaseObject obj);
     }
 }

@@ -33,7 +33,6 @@ C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\MonoGame.Framework.xml
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.xml
@@ -42,9 +41,9 @@ C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\obj\x86\Debug\Shooter.csprojAssemblyReference.cache
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\obj\x86\Debug\Shooter.csproj.CoreCompileInputs.cache
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\obj\x86\Debug\Shooter.csproj.CopyComplete
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\obj\x86\Debug\Shooter.exe
 C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\obj\x86\Debug\Shooter.pdb
+C:\Users\timtuv001\Source\Repos\PRR2_stuff\Shooter\Shooter\bin\Windows\x86\Debug\Content\UIFont.xnb

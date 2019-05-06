@@ -12,6 +12,7 @@ namespace Shooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         EnemySpawner enemySpawner = new EnemySpawner();
+        public static GameTime GameTime{ get; private set; }
 
         public Game1()
         {
@@ -67,6 +68,7 @@ namespace Shooter
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            GameTime = gameTime;
             ObjectManager.Update();
             enemySpawner.Update();
             // TODO: Add your update logic here

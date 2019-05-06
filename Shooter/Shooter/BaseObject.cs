@@ -28,7 +28,6 @@ namespace Shooter
 
         public virtual void Update()
         {
-
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
