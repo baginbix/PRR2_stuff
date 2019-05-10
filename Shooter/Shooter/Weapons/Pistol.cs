@@ -12,7 +12,7 @@ namespace Shooter
         public Pistol():base(10)
         {
             currentAmmo = MAX_AMMO;
-            reloadTime = 2;
+            reloadTime = 0.7f;
             shootingType = ShootingType.Semi_auto;
         }
 

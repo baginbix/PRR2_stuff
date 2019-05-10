@@ -14,7 +14,7 @@ namespace Shooter
         {
             currentAmmo = 2;
             rateOfFire = 0.5f;
-            this.reloadTime = 1;
+            this.reloadTime = 2;
             this.shootingType = ShootingType.Semi_auto;
             projectiles = 8;
         }

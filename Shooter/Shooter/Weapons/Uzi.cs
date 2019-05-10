@@ -12,7 +12,7 @@ namespace Shooter
         public Uzi() : base(20)
         {
             currentAmmo = MAX_AMMO;
-            reloadTime = 0.8f;
+            reloadTime = 1.2f;
             rateOfFire = 0.2f;
             this.shootingType = ShootingType.Full_auto;
         }

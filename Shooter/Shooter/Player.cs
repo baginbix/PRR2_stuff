@@ -138,13 +138,21 @@ namespace Shooter
 
         private void Reloading()
         {
+            // If the ammo is full, cancel reloding
+            if(weapon.CurrentAmmo == weapon.MAX_AMMO)
+            {
+                reloading = false;
+                return;
+            }
+
+
             if (reloadTimer >= weapon.ReloadTime)
             {
                 weapon.Reload();
                 reloading = false;
             }
 
-            reloadTimer += (float)Game1.GameTime.ElapsedGameTime.TotalSeconds;
+            reloadTimer += Time.ScaledTime;
         }
 
         private void WeaponActions()
