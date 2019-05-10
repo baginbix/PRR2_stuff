@@ -37,11 +37,14 @@ namespace Shooter
         
         public abstract void Shoot(TriggerState state, Vector2 position, Vector2 direction);
 
-        public abstract void Reload();
+        public virtual void Reload()
+        {
+            currentAmmo = MAX_AMMO;
+        }
 
         public virtual void Update()
         {
-
+            
         }
 
         /// <summary>

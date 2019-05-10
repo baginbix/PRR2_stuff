@@ -19,11 +19,6 @@ namespace Shooter
             projectiles = 8;
         }
 
-        public override void Reload()
-        {
-            currentAmmo = MAX_AMMO;
-        }
-
         public override void Shoot(TriggerState triggerState, Vector2 position, Vector2 direction)
         {
             if(triggerState == TriggerState.Pressing && currentAmmo>0)

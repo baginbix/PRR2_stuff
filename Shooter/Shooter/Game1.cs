@@ -34,6 +34,7 @@ namespace Shooter
 
             base.Initialize();
             ObjectManager.AddObject(new Player());
+            Time.TimeScale = 1;
         }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Shooter
             GameTime = gameTime;
             ObjectManager.Update();
             enemySpawner.Update();
+            Time.SetTime(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);

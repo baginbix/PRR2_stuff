@@ -15,10 +15,6 @@ namespace Shooter
             reloadTime = 2;
             shootingType = ShootingType.Semi_auto;
         }
-        public override void Reload()
-        {
-            currentAmmo = MAX_AMMO;
-        }
 
         public override void Shoot(TriggerState state, Vector2 position, Vector2 direction)
         {

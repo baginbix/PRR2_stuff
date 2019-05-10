@@ -16,7 +16,7 @@ namespace Shooter
         public EnemyFollowPlayer(Vector2 pos):base(pos)
         {
             target = ObjectManager.FindObject<Player>();
-            speed = 2;
+            speed = 2*60;
             color = Color.Red;
             CollisionBox = new Rectangle(pos.ToPoint(), new Point(10, 10));
             hp = 2;
@@ -28,7 +28,7 @@ namespace Shooter
             {
                 Vector2 direction = target.Position - position;
                 direction.Normalize();
-                position += direction * speed;
+                position += direction * speed* Time.ScaledTime;
                 CollisionBox = new Rectangle(position.ToPoint(), new Point(10, 10));
             }
         }

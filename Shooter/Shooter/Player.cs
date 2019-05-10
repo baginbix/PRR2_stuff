@@ -16,13 +16,17 @@ namespace Shooter
             Normal,
             Dashing
         }
-        float speed = 10f;
+
+        private const float WALKING_SPEED = 600f;
+        private const float DASHING_SPEED = 1200f;
+
+        float speed = WALKING_SPEED;
         Vector2 velocity = Vector2.Zero;
         KeyboardState keybord;
         float reloadTimer = 60;
 
         float dashDistance = 100f;
-        float dashTime = 1f;
+        float distanceDashed = 0;
 
         BaseWeapon weapon;
         BaseWeapon[] weaponList = new BaseWeapon[5];
@@ -34,9 +38,19 @@ namespace Shooter
         delegate void PlayerAction();
         PlayerAction action = null;
         PlayerState playerState = PlayerState.Normal;
-       
+        private bool invulnerable = false;
+        private Rectangle collisionBox;
 
-        public Rectangle CollisionBox { get; set; }
+
+
+        public Rectangle CollisionBox {
+            get {
+                if(invulnerable)
+                    return new Rectangle(position.ToPoint(),Point.Zero);
+                return collisionBox;
+            }
+            set { collisionBox = value; }
+        }
 
         public Player()
         {
@@ -59,6 +73,11 @@ namespace Shooter
 
             if (reloading)
                 Reloading();
+
+            if (keybord.IsKeyDown(Keys.LeftShift))
+                Time.TimeScale = 0.1f;
+            else
+                Time.TimeScale = 1;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -67,8 +86,11 @@ namespace Shooter
             DrawAmmo(spriteBatch);
         }
 
+        // Flyttar spelaren
         private void Movement()
         {
+            // Om spelaren inte gör annan action
+            // flytta spelaren
             if (action == null)
             {
                 velocity = Vector2.Zero;
@@ -95,10 +117,10 @@ namespace Shooter
             {
                 action.Invoke();
             }
-            position += velocity *speed;
+            position += velocity *speed * Time.ScaledTime;
             if (keybord.IsKeyDown(Keys.Space))
                 Dash();
-            CollisionBox = new Rectangle(position.ToPoint(), new Point(10, 10));
+            collisionBox = new Rectangle(position.ToPoint(), new Point(10, 10));
             ObjectManager.PlayerPosition = position;
         }
 
@@ -106,7 +128,10 @@ namespace Shooter
         {
             if(col is BaseEnemy)
             {
-                Remove = true;
+                // If player can die,
+                // remove player.
+                if(!invulnerable)
+                    Remove = true;
             }
 
         }
@@ -184,19 +209,22 @@ namespace Shooter
         {
             if (playerState == PlayerState.Dashing)
             {
-                float damp = 0.01f;
-                velocity *= damp;
-                if (velocity.Length() < 8)
+                distanceDashed +=  speed*Time.ScaledTime;
+                if (dashDistance <=  distanceDashed)
                 {
                     action = null;
                     playerState = PlayerState.Normal;
+                    invulnerable = false;
+                    speed = WALKING_SPEED;
                 }
             }
             else
             {
-                velocity *= 30f;
                 playerState = PlayerState.Dashing;
                 action = Dash;
+                distanceDashed = 0;
+                invulnerable = true;
+                speed = DASHING_SPEED;
             }
         }
     }

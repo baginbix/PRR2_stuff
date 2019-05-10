@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
+    <Compile Include="Time.cs" />
     <Compile Include="Weapons\Bullets\BaseBullet.cs" />
     <Compile Include="Enemies\BaseEnemy.cs" />
     <Compile Include="BaseObject.cs" />
